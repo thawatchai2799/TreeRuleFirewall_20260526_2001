@@ -1,0 +1,91 @@
+{
+  "mode": "single_ordering",
+  "ordering": 4,
+  "results": [
+    {
+      "n": 5,
+      "size_category": "small",
+      "depth_mean": 4,
+      "depth_max": 4,
+      "lrf_mean_us": 0.5112279998138547,
+      "lrf_std_us": 0.042907191212138804,
+      "trf_mean_us": 1.2866119998216163,
+      "trf_std_us": 0.21813690507442257,
+      "speedup": 0.3973443430379434,
+      "conv_mean_ms": 7.2907100002339575
+    },
+    {
+      "n": 10,
+      "size_category": "small",
+      "depth_mean": 4,
+      "depth_max": 4,
+      "lrf_mean_us": 0.717595999740297,
+      "lrf_std_us": 0.0251877022418544,
+      "trf_mean_us": 1.7762000001675915,
+      "trf_std_us": 0.215219550356414,
+      "speedup": 0.4040063054118843,
+      "conv_mean_ms": 19.99629999991157
+    },
+    {
+      "n": 25,
+      "size_category": "small",
+      "depth_mean": 4,
+      "depth_max": 4,
+      "lrf_mean_us": 1.4797980003640987,
+      "lrf_std_us": 0.0822318923962826,
+      "trf_mean_us": 2.7601460000732914,
+      "trf_std_us": 0.3021606382483749,
+      "speedup": 0.5361303352521225,
+      "conv_mean_ms": 147.78007999775582
+    },
+    {
+      "n": 50,
+      "size_category": "medium",
+      "depth_mean": 4,
+      "depth_max": 4,
+      "lrf_mean_us": 2.968692000285955,
+      "lrf_std_us": 0.5140537851661103,
+      "trf_mean_us": 4.120895999803906,
+      "trf_std_us": 0.25492052931746273,
+      "speedup": 0.7203996413467413,
+      "conv_mean_ms": 639.6268999989843
+    },
+    {
+      "n": 100,
+      "size_category": "medium",
+      "depth_mean": 4,
+      "depth_max": 4,
+      "lrf_mean_us": 5.197219999972731,
+      "lrf_std_us": 0.1625561096673002,
+      "trf_mean_us": 4.896905999921728,
+      "trf_std_us": 0.12213388225960817,
+      "speedup": 1.0613272952463868,
+      "conv_mean_ms": 1245.4052999986743
+    },
+    {
+      "n": 200,
+      "size_category": "large",
+      "depth_mean": 4,
+      "depth_max": 4,
+      "lrf_mean_us": 10.09453000020585,
+      "lrf_std_us": 0.2248421207949525,
+      "trf_mean_us": 5.549648000305751,
+      "trf_std_us": 0.09788617654361392,
+      "speedup": 1.8189495981816692,
+      "conv_mean_ms": 2171.0284400011005
+    },
+    {
+      "n": 400,
+      "size_category": "large",
+      "depth_mean": 4,
+      "depth_max": 4,
+      "lrf_mean_us": 19.838690000324277,
+      "lrf_std_us": 0.7703876079154873,
+      "trf_mean_us": 5.714994000154547,
+      "trf_std_us": 0.0798608309634278,
+      "speedup": 3.471340477310701,
+      "conv_mean_ms": 2974.1133799994714
+    }
+  ],
+  "size_categories": "Small 1-25 | Medium 26-100 | Large 101-400"
+}

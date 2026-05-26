@@ -1,0 +1,146 @@
+{
+  "size_categories": "Small 1-25 | Medium 26-100 | Large 101-400",
+  "elapsed_s": 1.9901024000064353,
+  "configurations": [
+    {
+      "size_category": "small",
+      "config": "Minimal (1S+1R)",
+      "trials": 500,
+      "TP": 997,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "small",
+      "config": "Normal (2S+2R)",
+      "trials": 500,
+      "TP": 1969,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "small",
+      "config": "Heavy (3S+2R)",
+      "trials": 500,
+      "TP": 2471,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "small",
+      "config": "Only Redundant",
+      "trials": 500,
+      "TP": 1482,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "small",
+      "config": "Only Shadow",
+      "trials": 500,
+      "TP": 1487,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "small",
+      "config": "Single Shadow",
+      "trials": 500,
+      "TP": 495,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "small",
+      "config": "Single Redundant",
+      "trials": 500,
+      "TP": 505,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "medium",
+      "config": "Minimal (1S+1R)",
+      "trials": 500,
+      "TP": 1251,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "medium",
+      "config": "Normal (2S+2R)",
+      "trials": 500,
+      "TP": 2263,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "medium",
+      "config": "Heavy (3S+2R)",
+      "trials": 500,
+      "TP": 2768,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "medium",
+      "config": "Only Redundant",
+      "trials": 500,
+      "TP": 1780,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "medium",
+      "config": "Only Shadow",
+      "trials": 500,
+      "TP": 1760,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "medium",
+      "config": "Single Shadow",
+      "trials": 500,
+      "TP": 792,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    },
+    {
+      "size_category": "medium",
+      "config": "Single Redundant",
+      "trials": 500,
+      "TP": 848,
+      "FP": 0,
+      "FN": 0,
+      "precision_pct": 100.0,
+      "recall_pct": 100.0
+    }
+  ]
+}

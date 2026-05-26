@@ -1,0 +1,19 @@
+# Folders to exclude
+build/
+files_IEEE_Access_format_300dpi/
+Lib/
+neurocuts/
+Scripts/
+__pycache__/
+
+# Cython compiled files (platform-specific)
+trf_match_cython.c
+trf_match_cython.cp312-win_amd64.pyd
+trf_match_cython.cp314-win_amd64.pyd
+
+# Large dataset files
+#policies_v12.jsonl
+
+# Python cache
+*.pyc
+*.pyo

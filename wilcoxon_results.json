@@ -1,0 +1,207 @@
+{
+  "test": "scipy.wilcoxon",
+  "alternative": "less (H1: protocol-first < protocol-elsewhere)",
+  "mode": "paired",
+  "by_size": {
+    "50": {
+      "n_trials": 5,
+      "metrics": {
+        "tree_bytes": {
+          "pf_mean": 7058050.133333333,
+          "pe_mean": 10568843.2,
+          "ratio": 1.497416850311973,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "n_nodes": {
+          "pf_mean": 2146.8,
+          "pe_mean": 4153.166666666667,
+          "ratio": 1.9345848083969939,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "match_us": {
+          "pf_mean": 4.050436666633081,
+          "pe_mean": 4.637860000487612,
+          "ratio": 1.1450271618103895,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "conv_ms": {
+          "pf_mean": 2385.224983333562,
+          "pe_mean": 3268.42426333363,
+          "ratio": 1.370279234106344,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "peak_bytes": {
+          "pf_mean": 26016001.6,
+          "pe_mean": 40762799.2,
+          "ratio": 1.566835666246269,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        }
+      }
+    },
+    "100": {
+      "n_trials": 5,
+      "metrics": {
+        "tree_bytes": {
+          "pf_mean": 13545174.4,
+          "pe_mean": 16904086.4,
+          "ratio": 1.2479784977888508,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "n_nodes": {
+          "pf_mean": 3455.6,
+          "pe_mean": 5451.766666666666,
+          "ratio": 1.5776613805610218,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "match_us": {
+          "pf_mean": 5.3087016664600615,
+          "pe_mean": 5.489536666694525,
+          "ratio": 1.034063884466698,
+          "p_value": 0.1875,
+          "significance": "ns",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "conv_ms": {
+          "pf_mean": 4856.184213333472,
+          "pe_mean": 5503.3621166670255,
+          "ratio": 1.1332688124879235,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "peak_bytes": {
+          "pf_mean": 50249032.53333334,
+          "pe_mean": 64373104.53333334,
+          "ratio": 1.2810814713821728,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        }
+      }
+    },
+    "200": {
+      "n_trials": 5,
+      "metrics": {
+        "tree_bytes": {
+          "pf_mean": 18848434.666666664,
+          "pe_mean": 20506528.0,
+          "ratio": 1.0879698162025977,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "n_nodes": {
+          "pf_mean": 4407.266666666667,
+          "pe_mean": 6061.0,
+          "ratio": 1.3752287888184662,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "match_us": {
+          "pf_mean": 5.923186666647476,
+          "pe_mean": 5.821618333720835,
+          "ratio": 0.982852417348493,
+          "p_value": 0.96875,
+          "significance": "ns",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "conv_ms": {
+          "pf_mean": 7145.341883333458,
+          "pe_mean": 7029.039696666587,
+          "ratio": 0.983723355919729,
+          "p_value": 0.96875,
+          "significance": "ns",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "peak_bytes": {
+          "pf_mean": 70102862.93333334,
+          "pe_mean": 76468893.86666666,
+          "ratio": 1.090809856644333,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        }
+      }
+    },
+    "400": {
+      "n_trials": 5,
+      "metrics": {
+        "tree_bytes": {
+          "pf_mean": 20708197.866666667,
+          "pe_mean": 21479704.0,
+          "ratio": 1.0372560730924443,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "n_nodes": {
+          "pf_mean": 4725.4,
+          "pe_mean": 6178.0,
+          "ratio": 1.3074025479324503,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "match_us": {
+          "pf_mean": 6.077916666617966,
+          "pe_mean": 5.94248999999157,
+          "ratio": 0.9777182422769619,
+          "p_value": 1.0,
+          "significance": "ns",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "conv_ms": {
+          "pf_mean": 8477.845426666801,
+          "pe_mean": 8007.865176665655,
+          "ratio": 0.9445637156201458,
+          "p_value": 1.0,
+          "significance": "ns",
+          "test": "binomial_sign",
+          "n_trials": 5
+        },
+        "peak_bytes": {
+          "pf_mean": 76951779.46666667,
+          "pe_mean": 79422026.93333332,
+          "ratio": 1.0321012390329023,
+          "p_value": 0.03125,
+          "significance": "*",
+          "test": "binomial_sign",
+          "n_trials": 5
+        }
+      }
+    }
+  }
+}
