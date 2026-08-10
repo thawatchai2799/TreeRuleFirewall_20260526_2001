@@ -5,9 +5,9 @@ cython_benchmark_v12.py
 Compile the v12 TRF tree to a flat-array representation and benchmark
 the compiled Cython match kernel against the pure-Python implementation.
 
-This addresses Reviewer Comment 5: "The 4.19x number is dominated by
-Python interpreter overhead and is not a meaningful indicator of
-algorithmic merit."
+Motivation: a pure-Python speedup figure is dominated by interpreter
+overhead and is not a meaningful indicator of algorithmic merit, so the
+same traversal is compiled to native code and re-measured.
 
 The Cython kernel:
 - Uses bounded uint32/int64 native types

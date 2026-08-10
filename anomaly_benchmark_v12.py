@@ -5,7 +5,7 @@ anomaly_benchmark_v12.py
 Step 2 Verification — Anomaly Detection (v12)
 Small: 1–25 | Medium: 26–100 | Large: 101–400 rules
 
-Tests Theorem 3 across three size categories and seven injection configs.
+Tests Proposition 2 across three size categories and seven injection configs.
 
 Usage:
   python anomaly_benchmark_v12.py
@@ -155,11 +155,11 @@ def run_benchmark(n_trials: int = 500, seed: int = 42, test_large: bool = False)
         print(f"{'['+size_cat.upper()+'] OVERALL':<22} {n_trials*7:>6} "
               f"{cat_tp:>7,} {cat_fp:>5} {cat_fn:>5} "
               f"{tot_p:>7.2f}% {tot_r:>7.2f}%")
-        print(f"Theorem 3 (FN=0): {'✅ CONFIRMED' if cat_fn==0 else '❌ VIOLATION'}")
+        print(f"Proposition 2 (FN=0): {'✅ CONFIRMED' if cat_fn==0 else '❌ VIOLATION'}")
 
     total_fn = sum(r["FN"] for r in all_results)
     print(f"\n{'='*68}")
-    print(f"ALL CATEGORIES — Theorem 3: {'✅ CONFIRMED' if total_fn==0 else '❌ VIOLATION'}")
+    print(f"ALL CATEGORIES — Proposition 2: {'✅ CONFIRMED' if total_fn==0 else '❌ VIOLATION'}")
     return all_results
 
 

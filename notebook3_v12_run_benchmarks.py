@@ -9,7 +9,7 @@ Default sample sizes match a 10,000-policy dataset.
 
 Steps:
   1. Semantic Fidelity  (Theorem 1) — semantic_verify_v12.py
-  2. Anomaly Detection  (Theorem 3) — anomaly_benchmark_v12.py
+  2. Anomaly Detection  (Proposition 2) — anomaly_benchmark_v12.py
   3. Scalability        (LRF vs TRF) — scalability_benchmark_v12.py
   4. Ordering Compare   (12 orders)  — ordering_benchmark_v12.py  [NEW]
 
@@ -114,7 +114,7 @@ def main():
     ]
     if args.test_large:
         anom_cmd.append("--test-large")
-    ok = run(anom_cmd, "Step 2: Anomaly Detection — Theorem 3 (per size category)")
+    ok = run(anom_cmd, "Step 2: Anomaly Detection — Proposition 2 (per size category)")
     all_ok = all_ok and ok
 
     # Step 3

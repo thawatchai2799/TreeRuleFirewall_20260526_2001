@@ -6,8 +6,8 @@ Post-process the JSON output of ordering_benchmark_v12.py to compute the
 paired Wilcoxon signed-rank test comparing protocol-first orderings
 (IDs 1-6) vs. protocol-elsewhere orderings (IDs 7-12).
 
-This addresses Reviewer Comment 3 by providing statistical significance
-testing for the ordering benchmark results.
+Provides statistical significance testing for the ordering benchmark
+results.
 
 Two run modes:
     - PAIRED MODE: requires raw per-trial values (key '_trials' inside

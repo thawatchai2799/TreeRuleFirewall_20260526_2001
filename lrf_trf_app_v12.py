@@ -259,7 +259,7 @@ def parse_policy(lines) -> list[Rule]:
 def deterministic_triad(rules: list[Rule]) -> tuple[list[Rule], dict]:
     """
     Exhaustive O(n²) pairwise containment.
-    Theorem 3: Recall = 1.0 guaranteed (exact arithmetic, no sampling).
+    Proposition 2: Recall = 1.0 guaranteed (exact arithmetic, no sampling).
     """
     n = len(rules)
     shadow_idx    = set()

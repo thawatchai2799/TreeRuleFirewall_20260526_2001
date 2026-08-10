@@ -9,8 +9,7 @@ Compiled match function for the TRF data structure. This is a minimal
 kernel that takes a flat representation of the TRF (arrays of node
 metadata) and returns the matched action for a packet.
 
-This addresses Reviewer Comment 5 by providing a compiled prototype
-that demonstrates the algorithmic O(d) advantage independent of
+A compiled prototype that exercises the O(d) traversal independent of
 Python interpreter overhead.
 
 The kernel uses a flat array representation:

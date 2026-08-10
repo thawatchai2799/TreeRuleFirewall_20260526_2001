@@ -1,6 +1,6 @@
 # LRF-to-TRF Framework v12 — How To Use
 
-**Paper:** *Automated, Formally Verified Conversion of Listed-Rule Firewalls to Tree-Rule Firewalls*  
+**Paper:** *Automated, Formally Proven Conversion of Listed-Rule Firewalls to Tree-Rule Firewalls*  
 **Author:** Thawatchai Chomsiri · Mahasarakham University, Thailand  
 **Default dataset:** 10,000 policies · Benchmark sizes: n ∈ {50, 100, 200, 400}
 
@@ -47,6 +47,10 @@ pip install scipy numpy Cython
 ---
 
 ## Quick Start (Full Pipeline)
+
+> **Note.** The bundled datasets are stored gzip-compressed to keep the repository small.
+> Decompress before running any benchmark: `gunzip -k policies_v12.jsonl.gz`
+> (or regenerate from scratch with Step 1 below).
 
 ```bash
 # Step 0: Compile Cython kernel (one-time, optional)
@@ -274,15 +278,15 @@ python cython_benchmark_v12.py
 
 | File | Produced by | Paper reference |
 |------|-------------|-----------------|
-| `policies_v12.jsonl` | notebook1 | Dataset for all benchmarks |
-| `conversion_reports_v12.jsonl` | notebook2 | Conversion metadata |
-| `semantic_verify_v12_results.json` | semantic_verify | Table II, Fig. 13 |
-| `anomaly_benchmark_v12_results.json` | anomaly_benchmark | Fig. 14, 15 |
-| `scalability_v12_results.json` | scalability_benchmark | Fig. 16, 17, 18 |
-| `ordering_benchmark_v12_results.json` | ordering_benchmark | Table III, Fig. 19 |
-| `wilcoxon_results.json` | wilcoxon_test | Section VI-E |
-| `classbench_results.json` | classbench_comparative | Table IV, Fig. 21, 22 |
-| `cython_results.json` | cython_benchmark | Table V, Fig. 23 |
+| `policies_v12.jsonl` | notebook1 | Dataset for all benchmarks (shipped as `.gz`) |
+| `conversion_reports_v12.jsonl` | notebook2 | Conversion metadata (shipped as `.gz`) |
+| `semantic_verify_v12_results.json` | semantic_verify | Table 2 |
+| `anomaly_benchmark_v12_results.json` | anomaly_benchmark | Figure 10 |
+| `scalability_v12_results.json` | scalability_benchmark | Table 7, Figures 11-12 |
+| `ordering_benchmark_v12_results.json` | ordering_benchmark | Table 3 |
+| `wilcoxon_results.json` | wilcoxon_test | Section 6.5 |
+| `classbench_results.json` | classbench_comparative | Table 4, Figures 14-15 |
+| `cython_results.json` | cython_benchmark | Table 5 |
 
 ---
 
@@ -401,13 +405,13 @@ for r in slow:
 ## Citation
 
 ```bibtex
-@article{chomsiri2025lrf2trf,
-  title   = {Automated, Formally Verified Conversion of Listed-Rule
-             Firewalls to Tree-Rule Firewalls},
+@software{chomsiri_lrf2trf_framework,
+  title   = {LRF-to-TRF Framework: Source Code, Datasets, and
+             Benchmark Results},
   author  = {Chomsiri, Thawatchai},
-  journal = {IEEE Access},
-  year    = {2025},
-  note    = {Submitted}
+  year    = {2026},
+  doi     = {10.5281/zenodo.20396163},
+  url     = {https://doi.org/10.5281/zenodo.20396163}
 }
 ```
 
