@@ -1,6 +1,5 @@
 # Folders to exclude
 build/
-files_IEEE_Access_format_300dpi/
 Lib/
 neurocuts/
 Scripts/
@@ -11,8 +10,10 @@ trf_match_cython.c
 trf_match_cython.cp312-win_amd64.pyd
 trf_match_cython.cp314-win_amd64.pyd
 
-# Large dataset files
-#policies_v12.jsonl
+# Decompressed datasets (the .gz versions are tracked instead)
+policies_v12.jsonl
+conversion_reports_v12.jsonl
+policies_v12_50k.jsonl
 
 # Python cache
 *.pyc
