@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Extended Experiments ��� LRF-to-TRF Framework</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Extended Experiments ��� LRF-to-TRF Framework</h1>
+</header>
+<h1 id="extended-experiments-lrf-to-trf-framework">Extended Experiments
+— LRF-to-TRF Framework</h1>
+<p><strong>Manuscript:</strong> “Automated, Formally Proven Conversion
+of Listed-Rule Firewalls to Tree-Rule Firewalls”
+<strong>Author:</strong> Thawatchai Chomsiri · Mahasarakham University,
+Thailand</p>
+<p>This folder contains a second round of experiments extending the core
+evaluation: a larger dataset, a second hardware platform, a
+hyperparameter sensitivity sweep, and a strengthened statistical
+treatment of the ordering benchmark. It <strong>supplements — does not
+replace</strong> the main framework archive in the repository root,
+which contains the conversion framework itself and the primary
+experiments.</p>
+<hr />
+<h2 id="what-each-experiment-answers">1. What each experiment
+answers</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Research question</th>
+<th>Script(s)</th>
+<th>Result file(s)</th>
+<th>Manuscript section</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Does the depth result hold at larger scale?</strong> The
+primary evaluation used 10,000 policies; here an independent
+50,000-policy dataset (5×) is generated and converted, with semantic
+fidelity re-checked on a 10,000-policy random sample.</td>
+<td><em>(uses <code>notebook1/2_v12_*.py</code> and
+<code>semantic_verify_v12.py</code> from the repository root — see
+<code>scripts/run_50k_experiment.sh</code> for the exact
+commands)</em></td>
+<td><code>results/policies_v12_50k.jsonl.gz</code> (the dataset),
+<code>results/conversion_reports_v12.jsonl.gz</code> (per-policy
+conversion metadata for all 50,000),
+<code>results/semantic_verify_50k_results.json</code> (Theorem 1 check
+on the sample)</td>
+<td>Section 6.9 &quot;Large-Scale Validation&quot;, Table 6</td>
+</tr>
+<tr class="even">
+<td><strong>Are the timing results specific to one machine?</strong> The
+primary timings came from a single workstation; here the scalability
+benchmark is repeated on an independently specified second machine.</td>
+<td><em>(uses <code>scalability_benchmark_v12.py</code> from the
+repository root)</em></td>
+<td><code>results/scalability_2ndplatform_results_clean.json</code>
+(Intel Core i7-8700 @ 3.20 GHz, 6C/12T, 16 GB RAM, Windows 11)</td>
+<td>Section 6.10 “Cross-Platform Validation”, Table 7</td>
+</tr>
+<tr class="odd">
+<td><strong>Do the HiCuts comparison conclusions depend on its
+hyperparameters?</strong> The main comparison fixes binth=8, spfac=4;
+both are swept here to test whether HiCuts’ variable, data-dependent
+depth is structural or configuration-specific.</td>
+<td><code>scripts/hicuts_sensitivity_v12.py</code></td>
+<td><code>results/hicuts_sensitivity_v12_results.json</code></td>
+<td>Section 6.7 (HiCuts parameter sensitivity)</td>
+</tr>
+<tr class="even">
+<td><strong>How robust is the ordering result under a rigorous
+statistical treatment?</strong> The benchmark is re-run with 10
+independent trials per condition (up from 5), then analysed with a
+matched-pairs rank-biserial effect size, Holm-Bonferroni family-wise
+correction, and TOST equivalence testing.</td>
+<td><code>scripts/stats_strengthen_v12.py</code></td>
+<td><code>results/ordering_benchmark_v12_results_merged10.json</code>
+(raw 10-trial data),
+<code>results/stats_strengthen_v12_results_10trials.json</code>
+(computed statistics, family = 20 — <strong>the version used in the
+manuscript</strong>), <code>results/holm_family4_10trials.json</code>
+(alternative family = 4 correction scope, retained for comparison,
+<strong>not</strong> used),
+<code>results/ordering_statistics_family20.md</code> (write-up comparing
+the two scopes)</td>
+<td>Section 6.5, Table 3</td>
+</tr>
+<tr class="odd">
+<td><strong>How much memory does conversion actually consume?</strong>
+Peak-memory figures measured with <code>tracemalloc</code> rather than
+<code>sys.getsizeof</code>.</td>
+<td><em>(instrumentation already present in
+<code>ordering_benchmark_v12.py</code>; no separate script — see the
+<code>peak_bytes</code> field)</em></td>
+<td><code>results/ordering_benchmark_v12_results_merged10.json</code>
+(<code>peak_bytes</code> field)</td>
+<td>Section 6.5, Section 7.5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note on the second-platform run.</strong> An initial run on
+the second machine was discarded after a concurrent CPU-heavy process
+was found to have been competing for resources.
+<code>scalability_2ndplatform_results_clean.json</code> is the clean
+re-run and the only version reported.</p>
+<hr />
+<h2 id="generative-ai-disclosure">2. Generative AI disclosure</h2>
+<p>The scripts in <code>scripts/</code>
+(<code>stats_strengthen_v12.py</code>,
+<code>hicuts_sensitivity_v12.py</code>, <code>merge_chunks.py</code>)
+were AI-drafted (Anthropic Claude), in the same manner disclosed in the
+manuscript’s Generative AI Disclosure section for the framework code.
+All AI-drafted code was reviewed and tested by the author. The
+statistical methodology — the choice of effect-size measure, the scope
+of the family-wise correction, and the equivalence-test bounds — and the
+decision of which experiments to run were author decisions, not AI
+decisions.</p>
+<hr />
+<h2 id="file-manifest">3. File manifest</h2>
+<pre><code>ExtendedExperiments/
+├── README.md                                        (this file)
+├── README.html                                      (HTML version of this file)
+├── scripts/
+│   ├── stats_strengthen_v12.py                      (effect size + Holm-Bonferroni + TOST)
+│   ├── hicuts_sensitivity_v12.py                    (HiCuts binth/spfac sweep)
+│   ├── merge_chunks.py                              (utility: combine chunked benchmark runs)
+│   ├── run_50k_experiment.sh                        (commands used for the 50,000-policy run)
+│   └── run_100k_experiment.sh                       (reference script; superseded by the 50k run)
+└── results/
+    ├── ordering_benchmark_v12_results_merged10.json (raw 10-trial ordering-benchmark data)
+    ├── stats_strengthen_v12_results_10trials.json   (computed statistics, family=20 — used in manuscript)
+    ├── holm_family4_10trials.json                   (alternative correction scope, for comparison only)
+    ├── ordering_statistics_family20.md              (write-up comparing correction-scope choices)
+    ├── hicuts_sensitivity_v12_results.json          (HiCuts sensitivity sweep results)
+    ├── semantic_verify_50k_results.json             (Theorem 1 check, 10k sample from 50k policies)
+    ├── conversion_reports_v12.jsonl.gz              (per-policy conversion metadata, all 50,000 policies)
+    ├── policies_v12_50k.jsonl.gz                    (the 50,000-policy dataset itself)
+    └── scalability_2ndplatform_results_clean.json   (second-platform scalability benchmark, i7-8700)</code></pre>
+<p>To decompress a dataset:
+<code>gunzip -k policies_v12_50k.jsonl.gz</code></p>
+<hr />
+<h2 id="relationship-to-the-main-archive">4. Relationship to the main
+archive</h2>
+<p>This folder does <strong>not</strong> duplicate the framework code
+(<code>lrf_trf_app_v12.py</code>, <code>notebook1/2/3_v12_*.py</code>,
+<code>semantic_verify_v12.py</code>,
+<code>anomaly_benchmark_v12.py</code>,
+<code>scalability_benchmark_v12.py</code>,
+<code>ordering_benchmark_v12.py</code>,
+<code>hicuts_baseline_v12.py</code>, <code>fdd_baseline_v12.py</code>,
+and the rest), which lives in the repository root and is unchanged. Both
+are archived together at:</p>
+<ul>
+<li>GitHub:
+https://github.com/thawatchai2799/TreeRuleFirewall_20260526_2001</li>
+<li>Zenodo (archived, DOI): 10.5281/zenodo.20396163</li>
+</ul>
+<p>The scripts here import from that code
+(<code>stats_strengthen_v12.py</code> and
+<code>hicuts_sensitivity_v12.py</code> both import
+<code>lrf_trf_app_v12.py</code>); to re-run anything, place them in the
+same directory as the root-level files, or run them from the repository
+root.</p>
+</body>
+</html>
