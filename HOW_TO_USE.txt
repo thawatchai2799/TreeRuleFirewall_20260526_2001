@@ -414,3 +414,28 @@ Thawatchai Chomsiri
 Department of Information Technology, Faculty of Informatics  
 Mahasarakham University, Maha Sarakham 44150, Thailand  
 thawatchai.c@msu.ac.th
+
+---
+
+## What's new in v14 (revision)
+
+| Item | Location | Purpose |
+|---|---|---|
+| Proposition 4 counterexample | tests/test_proposition4_counterexample.py | Reproduces the 10-vs-14 internal-node counts of the two-rule policy in the proof (run: python tests/test_proposition4_counterexample.py) |
+| Figure scripts | figures/scripts/make_figure*.py | Regenerate Figures 4, 5, 11, 13, 14, 15 at 600 dpi from the JSON results in this repository |
+| Adaptive ordering study | ExtendedExperiments/AdaptiveOrdering/ | Data and README for the 800-policy x 12-ordering follow-up study (Section 7.4, Table 8) |
+
+Two clarifications about existing scripts:
+
+- Ordering benchmark sample. ordering_benchmark_v12.py generates its own policies with a simpler
+  rule generator (single hosts, /24 subnets or ANY; single well-known ports; no anomaly injection):
+  one policy per trial, so 10 trials = 10 independently generated policies per size. It does not
+  read policies_v12.jsonl.gz. Each policy is converted under all 12 orderings and matched against the
+  same 2,000 random packets. Paired statistics use the per-policy mean over orderings 1-6 versus 7-12.
+- FDD baseline. fdd_baseline_v12.py runs this framework's own pipeline with the attribute ordering
+  fixed to Ordering 1. It is an ordering-controlled ablation, not an independent implementation of
+  Firewall Decision Diagrams; treat its absolute figures accordingly.
+
+Default ordering. The framework default is Ordering 4. The follow-up study shows that Ordering 1
+(protocol first, destination port last) gives far smaller trees (53.8% fewer nodes at n = 400);
+select it with --ordering 1 (see ExtendedExperiments/AdaptiveOrdering/README.md).
