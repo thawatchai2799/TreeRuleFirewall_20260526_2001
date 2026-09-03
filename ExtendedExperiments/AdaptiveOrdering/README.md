@@ -1,0 +1,59 @@
+# Adaptive Ordering Study (Experiment E1)
+
+Follow-up study reported in Section 7.4 (Table 8) of the paper: is it worth choosing the
+attribute ordering per policy, and how much of the tree's structural expansion is avoidable?
+
+## Design
+
+| Item | Value |
+|---|---|
+| Policies | 800, drawn from the 10,000-policy dataset (`policies_v12.jsonl.gz`), 200 per size band |
+| Size bands | centred on n = 50, 100, 200, 400 |
+| Orderings | all 12 admissible orderings (Table 1 of the paper) |
+| Conversions | 9,600 (800 policies x 12 orderings) |
+| Seed | 7331 |
+| Platform | one Windows 11 machine, 8-core Intel processor, Python 3.12.8 |
+| Metrics | `n_nodes`, `tree_bytes`, `peak_bytes`, `conv_s`, `match_us_mean` (latency sampled on a 176-policy subset) |
+
+For every policy and metric the lowest-cost ordering and the *regret* of a fixed choice
+(relative excess cost of that fixed ordering over the per-policy optimum) were recorded.
+
+## Files
+
+- `e1_wide.csv` - one row per policy (800 rows, 79 columns): policy id, 15 structural features
+  (cut-point counts, protocol entropy, span statistics, ...), and every metric under every ordering
+  (`<metric>_o<k>` for k = 1..12). Latency columns are empty for policies not in the timing subset.
+- `summary.txt` - integrity check and per-metric summary produced by the analysis script
+  (wins per ordering, regret of the default Ordering 4, protocol-first vs protocol-elsewhere ratio by band).
+
+## Headline results (node count)
+
+| Band | Reduction, per-policy best vs Ordering 4 | Reduction, fixed Ordering 1 vs Ordering 4 | PE/PF node ratio |
+|---|---|---|---|
+| 50 | 15.4% | 14.2% | 1.84 |
+| 100 | 25.8% | 25.7% | 1.44 |
+| 200 | 41.5% | 41.4% | 1.10 |
+| 400 | 53.8% | 53.8% | 0.92 |
+
+Orderings 1 and 3 (protocol first, destination port last) are the best ordering for 750 of the
+800 policies; the fixed Ordering 1 is within 0.7% of the per-policy optimum on average.
+Node count overstates the practical gain: the corresponding reduction in tree memory is 0.5-1.8%
+and in match latency 2-9%. See Section 7.4 of the paper for the full discussion and caveats.
+
+## Reproducing the table
+
+```python
+import pandas as pd
+df = pd.read_csv("e1_wide.csv")
+df["band"] = df["n_rules_in"].apply(lambda n: min([50, 100, 200, 400], key=lambda b: abs(b - n)))
+nodes = [f"n_nodes_o{k}" for k in range(1, 13)]
+for b, g in df.groupby("band"):
+    best = g[nodes].min(axis=1).mean(); o4 = g["n_nodes_o4"].mean(); o1 = g["n_nodes_o1"].mean()
+    print(b, f"best {1-best/o4:.1%}", f"ordering1 {1-o1/o4:.1%}")
+```
+
+## Note on the default ordering
+
+All results in the paper are reported under Ordering 4, the current default of
+`lrf_trf_app_v12.py`, for consistency with the released benchmarks. On the evidence above the
+default should be Ordering 1; users can select it with `--ordering 1`.
