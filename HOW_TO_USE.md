@@ -432,7 +432,7 @@ thawatchai.c@msu.ac.th
 |---|---|---|
 | Proposition 4 counterexample | `tests/test_proposition4_counterexample.py` | Reproduces the 10-vs-14 internal-node counts of the two-rule policy in the proof (run: `python tests/test_proposition4_counterexample.py`) |
 | Figure scripts | `figures/scripts/make_figure*.py` | Regenerate Figures 4, 5, 11, 13, 14, 15 at 600 dpi from the JSON results in this repository |
-| Adaptive ordering study | `ExtendedExperiments/AdaptiveOrdering/` | Data and README for the 800-policy x 12-ordering follow-up study (Section 7.4, Table 8) |
+| Adaptive ordering study | `ExtendedExperiments/AdaptiveOrdering/` | Data, README, and the runner/analysis scripts (`e1_runner.py`, `e1_analyze.py`, `features.py`) for the 800-policy x 12-ordering follow-up study (Section 7.4, Table 8) |
 
 Two clarifications about existing scripts:
 

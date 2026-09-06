@@ -1,5 +1,15 @@
 # Changelog
 
+## v14.1 (2026-09)
+
+- Added `e1_runner.py`, `e1_analyze.py`, and their dependency `features.py` to
+  `ExtendedExperiments/AdaptiveOrdering/`, so the follow-up ordering study (Section 7.4,
+  Table 8) can be reproduced from source rather than from the released CSV alone.
+  `HowToRun.txt` records the exact commands used to produce `e1.jsonl`, `summary.txt`,
+  and `e1_wide.csv`.
+- Corrected a doubly-escaped ampersand in the manuscript's reference list (unrelated to
+  this repository, noted here for completeness).
+
 ## v14.0 (2026-09)
 
 Revision accompanying the revised manuscript.
