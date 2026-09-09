@@ -1,5 +1,11 @@
 # Changelog
 
+## v14.2 (2026-09)
+
+- Redrawn Figures 6, 8, and 9 (and their generating scripts `figures/scripts/make_figure06_08.py`,
+  `make_figure09.py`): Figure 8 now shows Lemma 1.B / Corollary 1.B in the dependency chain,
+  Figure 6 shows stage shares only, and Figure 9 no longer carries an O(d) label.
+
 ## v14.1 (2026-09)
 
 - Added `e1_runner.py`, `e1_analyze.py`, and their dependency `features.py` to
