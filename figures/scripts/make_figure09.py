@@ -18,14 +18,14 @@ def edge(x1, y1, x2, y2, lab=None, dx=0.06):
 L = [H-1.35, H-2.45, H-3.55, H-4.65]
 for i, l in enumerate(['L1', 'L2', 'L3', 'L4']): ax.text(0.3, L[i], l, fontsize=10, fontweight='bold', color='#888', va='center')
 node(2.5+S, L[0], '[protocol]', '#dbe9f6', '#2c6fad')
-for x, lab in [(1.5+S, 'TCP'), (2.5+S, 'UDP'), (3.5+S, 'ICMP')]:
-    node(x, L[1], '[dst_ip]', '#dff2e4', '#1e8449'); edge(2.5+S, L[0], x, L[1], lab)
+for x, lab, ddx in [(1.5+S, 'TCP', -0.34), (2.54+S, 'UDP', 0.06), (3.6+S, 'ICMP', 0.06)]:   # v14.3: L2 nodes separated; TCP label off the edge
+    node(x, L[1], '[dst_ip]', '#dff2e4', '#1e8449'); edge(2.5+S, L[0], x, L[1], lab, dx=ddx)
 node(1.0+S, L[2], '[dst_port]', '#fdebd0', '#b9770e'); node(2.0+S, L[2], '[dst_port]', '#fdebd0', '#b9770e')
-edge(1.5+S, L[1], 1.0+S, L[2], '10.0.x', dx=-0.45); edge(1.5+S, L[1], 2.0+S, L[2], '192.x')
-node(0.75+S, L[3], '[src_ip]', '#fbe0e0', '#b03a2e', w=0.78); node(1.55+S, L[3], '[src_ip]', '#fbe0e0', '#b03a2e', w=0.78)
-edge(1.0+S, L[2], 0.75+S, L[3]); edge(1.0+S, L[2], 1.55+S, L[3])
-node(0.75+S, L[3]-0.7, 'ALLOW', '#1e8449', '#ffffff', w=0.7, h=0.3, fs=8); node(1.55+S, L[3]-0.7, 'DENY', '#c0392b', '#ffffff', w=0.7, h=0.3, fs=8)
-for x in (0.75+S, 1.55+S): ax.plot([x, x], [L[3]-0.18, L[3]-0.55], color='#777', lw=1.1)
+edge(1.5+S, L[1], 1.0+S, L[2], '10.0.x', dx=-0.52); edge(1.5+S, L[1], 2.0+S, L[2], '192.x')
+node(0.75+S, L[3], '[src_ip]', '#fbe0e0', '#b03a2e', w=0.78); node(1.66+S, L[3], '[src_ip]', '#fbe0e0', '#b03a2e', w=0.78)
+edge(1.0+S, L[2], 0.75+S, L[3]); edge(1.0+S, L[2], 1.66+S, L[3])
+node(0.75+S, L[3]-0.7, 'ALLOW', '#1e8449', '#ffffff', w=0.7, h=0.3, fs=8); node(1.66+S, L[3]-0.7, 'DENY', '#c0392b', '#ffffff', w=0.7, h=0.3, fs=8)
+for x in (0.75+S, 1.66+S): ax.plot([x, x], [L[3]-0.18, L[3]-0.55], color='#777', lw=1.1)
 px, py, pw, ph = 4.55, H-4.95, 2.1, 3.35
 ax.add_patch(FancyBboxPatch((px, py), pw, ph, boxstyle='round,pad=0.02,rounding_size=0.08', fc='#f4f6f7', ec='#5d6d7e', lw=1.3))
 ax.text(px+pw/2, py+ph-0.28, 'Per-level role (Ordering 4)', ha='center', fontsize=8.8, fontweight='bold', color='#1f3a5f')
@@ -33,6 +33,6 @@ rows = [('L1', '#2c6fad', 'Root: split on protocol\n(3 atomic classes)'), ('L2',
 yy = py+ph-0.75
 for l, c, txt in rows:
     ax.text(px+0.14, yy, l, fontsize=8.6, fontweight='bold', color=c, va='top'); ax.text(px+0.5, yy, txt, fontsize=7.0, color='#333', va='top', linespacing=1.35); yy -= 0.72
-ax.text(0.3, 0.35, 'Per-packet work is O(d\u00b7c): d = 4 levels; c = child-selection cost at a node, which grows with fan-out (Section 7.3).', fontsize=7.4, style='italic', color='#555')
+ax.text(0.3, 0.21, 'Per-packet work is O(d\u00b7c): d = 4 levels; c = child-selection cost at a node, which grows with fan-out (Section 7.3).', fontsize=7.4, style='italic', color='#555')
 fig.savefig(os.path.join(OUT, 'Figure09.png'), dpi=600); fig.savefig(os.path.join(OUT, 'Figure09.pdf'))
 print('Figure09 written')

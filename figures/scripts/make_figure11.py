@@ -18,14 +18,14 @@ a.plot(xs, lrf, '-o', color='#c0392b', lw=2.5, ms=9, label='LRF (linear scan, Py
 a.plot(xs, trf, '-s', color='#2c4a6b', lw=2.5, ms=9, label='TRF (proposed, Python reference)')
 a.axvline(4, ls=':', color='#333'); a.text(4.07, 14.5, 'crossover\nn\u2248100', fontsize=10, color='#333')
 for x, t, c in [(0.9, 'Small', '#5b7fa6'), (3.5, 'Medium', '#7b4f9d'), (5.5, 'Large', '#2e8b6e')]:
-    a.text(x, 0.9, t, fontsize=11, fontweight='bold', color=c, ha='center')
+    a.text(x, 8.0, t, fontsize=11, fontweight='bold', color=c, ha='center', va='center')   # v14.3: above the curves
 a.set_xticks(xs); a.set_xticklabels(ns); a.set_xlim(-0.5, 6.5); a.set_ylim(0, 21)
 a.set_xlabel('policy size n (rules)', fontsize=12); a.set_ylabel('match latency (\u03bcs)', fontsize=12)
 a.set_title('(a)  Match latency: TRF vs LRF (both CPython)', fontsize=13, fontweight='bold', color='#1f3a5f')
 a.legend(loc='upper left', fontsize=10); a.grid(axis='y', ls=':', alpha=0.4)
 cols = ['#8fbde0'] * 3 + ['#b39ddb'] * 2 + ['#66c2a5'] * 2
 b.bar(xs, sp, color=cols)
-for x, v in zip(xs, sp): b.text(x, v + 0.07, f'{v:.2f}\u00d7', ha='center', fontsize=10)
+for x, v in zip(xs, sp): b.text(x, v + (0.11 if abs(v-1) < 0.1 else 0.07), f'{v:.2f}\u00d7', ha='center', fontsize=10)   # v14.3: keep label off the 1.0x line
 b.axhline(1, ls='--', color='k')
 b.legend(handles=[Patch(color='#8fbde0', label='Small (1\u201325)'), Patch(color='#b39ddb', label='Medium (26\u2013100)'), Patch(color='#66c2a5', label='Large (101\u2013400)')], loc='upper left', fontsize=10)
 b.set_xticks(xs); b.set_xticklabels(ns); b.set_ylim(0, 3.9)

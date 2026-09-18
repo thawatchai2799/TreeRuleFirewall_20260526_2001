@@ -23,7 +23,7 @@ box(bx, ys[3]-bh, bw, bh, '#dbe9f6', '#2c6fad', '4D Decomp. + Proj. Normalizatio
 box(bx, ys[4]-bh, bw, bh, '#dff2e4', '#1e8449', 'TRF  T = BuildTRF(C\u2032, A*)', 'd = 4 \u00b7 sibling edges disjoint')
 box(bx, ys[5]-bh, bw, bh, '#eeeeee', '#666666', 'ALLOW / DENY', '= \u03c6_LRF(P, \u03c8)')
 for i in range(5): ax.annotate('', xy=(bx+bw/2, ys[i+1]), xytext=(bx+bw/2, ys[i]-bh), arrowprops=dict(arrowstyle='-|>', color='#333', lw=1.3))
-tx = 4.0; tw = 2.3
+tx = 3.875; tw = 2.55   # v14.3: side tags widened by 0.125 in on each side
 tag(tx, ys[1]-bh+0.12, 'Proposition 2 (Completeness)\nLemma 4 (C1\u2013C4 \u21d4 containment)', tw, 0.56)
 tag(tx, ys[2]-bh+0.19, 'Proposition 1 (Removal preserves \u03c6_LRF)', tw, 0.42)
 tag(tx, ys[3]-bh-0.02, 'Lemma 1 (cells disjoint) \u00b7 Lemma 1.A\nLemma 1.B (axis alignment)\nLemma 2 (cover \u03a9) \u00b7 Lemma 3 (first match)', tw, 0.84)
@@ -48,5 +48,7 @@ for c, (p, l, s) in zip(cols, labels):
     fig.patches.append(plt.Rectangle((0.52, ly-0.015), 0.022, 0.032, transform=fig.transFigure, color=c))
     fig.text(0.555, ly+0.004, f'{p}  {l}', fontsize=7.8, va='center', fontweight='bold', color='#222'); fig.text(0.555, ly-0.03, s, fontsize=7, va='center', color='#555'); ly -= 0.1
 fig.text(0.52, 0.34, 'N = cells before normalization; N = O(n\u00b3) per atomic\nprotocol in the worst case (Section 4.4). Projection\nNormalization dominates at large n because of its O(N\u00b2)\ncost; conversion is a one-time offline cost. Absolute\ntimes for the released runs: Figure 12 and Table 6.', fontsize=7.2, va='top', color='#333', linespacing=1.45)
-fig.savefig(os.path.join(OUT, 'Figure06.png'), dpi=600); fig.savefig(os.path.join(OUT, 'Figure06.pdf'))
+from matplotlib.transforms import Bbox
+crop = Bbox([[0, 1.05], [W, H]])   # v14.3: trim empty bottom band
+fig.savefig(os.path.join(OUT, 'Figure06.png'), dpi=600, bbox_inches=crop); fig.savefig(os.path.join(OUT, 'Figure06.pdf'), bbox_inches=crop)
 print('Figure06 and Figure08 written')

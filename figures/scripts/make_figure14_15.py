@@ -18,12 +18,12 @@ a.plot(sizes, mean('lrf_match_us'), '-s', color='#c0392b', lw=2.4, ms=8, label='
 a.plot(sizes, mean('fdd_match_us'), '-D', color='#5cb85c', lw=2.4, ms=8, label='FDD-style fixed-order ablation (Ordering 1)')
 a.plot(sizes, mean('hicuts_match_us'), '-^', color='#e67e22', lw=2.4, ms=8, label='HiCuts [16]')
 a.set_xscale('log'); a.set_xticks(sizes); a.set_xticklabels(sizes); a.set_xlim(40, 470)
-a.text(60, 0.6, 'Medium', color='#7b4f9d', fontweight='bold'); a.text(260, 0.6, 'Large', color='#2e8b6e', fontweight='bold')
+a.text(60, 12, 'Medium', color='#7b4f9d', fontweight='bold'); a.text(260, 5, 'Large', color='#2e8b6e', fontweight='bold')   # v14.3: labels in the empty part of each band
 a.set_xlabel('sampled rules per ruleset', fontsize=11); a.set_ylabel('mean match latency (\u03bcs)', fontsize=11); a.set_ylim(0, 22)
 a.set_title('(a)  Match latency \u2014 mean of 8 ClassBench-ng rulesets (Python)', fontsize=10.5, fontweight='bold', color='#1f3a5f'); a.legend(fontsize=8.5, loc='upper left'); a.grid(axis='y', ls=':', alpha=0.4)
 sp = [d[r]['by_size']['400']['trf_speedup'] for r in rs]; cols = ['#2c4a6b' if v >= 1 else '#c0392b' for v in sp]
 b.barh(names[::-1], sp[::-1], color=cols[::-1]); b.axvline(1, ls='--', color='k')
-for i, v in enumerate(sp[::-1]): b.text(v + 0.05, i, f'{v:.2f}\u00d7', va='center', fontsize=9)
+for i, v in enumerate(sp[::-1]): b.text(max(v, 1.0) + 0.05, i, f'{v:.2f}\u00d7', va='center', fontsize=9)   # v14.3: labels of bars < 1 placed right of the 1.0x line
 b.set_xlim(0, 4.9); b.set_xlabel('TRF/LRF speedup (\u00d7) at n=400 (Large)\n(>1 = TRF faster)', fontsize=10)
 b.set_title('(b)  Per-ruleset speedup at n=400', fontsize=11, fontweight='bold', color='#1f3a5f')
 for ax in (a, b):

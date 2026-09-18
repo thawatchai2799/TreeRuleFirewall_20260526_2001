@@ -17,12 +17,12 @@ ax.text(W/2, H-0.35, 'Protocol Hierarchy Expansion', ha='center', fontsize=14, f
 ax.text(W/2, H-0.7, 'Phase 1 of Stage 4 (4D Decomposition)', ha='center', fontsize=9.5, color='#555')
 box(ax, 0.5, H-2.3, W-1, 1.35, '#fbe0e0', '#b03a2e')
 ax.text(W/2, H-1.25, 'Original LRF Rules (first-match order)', ha='center', fontsize=11, fontweight='bold', color='#b03a2e')
-ax.text(0.85, H-1.65, 'r1:  TCP   192.168.1.5        ANY   443   \u2192 ALLOW', fontsize=9.5, family=MONO, color='#222')
-ax.text(0.85, H-2.0, 'r2:  IP     192.168.0.0/16   ANY   ANY   \u2192 DENY', fontsize=9.5, family=MONO, color='#222')
+ax.text(0.85, H-1.65, 'r1:  TCP  192.168.1.5     ANY  443  \u2192 ALLOW', fontsize=9.5, family=MONO, color='#222')
+ax.text(0.85, H-2.0, 'r2:  IP   192.168.0.0/16  ANY  ANY  \u2192 DENY', fontsize=9.5, family=MONO, color='#222')
 ax.annotate('', xy=(W/2, H-3.1), xytext=(W/2, H-2.4), arrowprops=dict(arrowstyle='-|>', color='#333', lw=1.4)); ax.text(W/2+0.15, H-2.75, 'protocol\nexpansion', fontsize=8.5, style='italic', color='#333', va='center')
 box(ax, 0.5, H-5.1, W-1, 1.95, '#dff2e4', '#1e8449')
 ax.text(W/2, H-3.45, 'After Atomic Expansion (order preserved)', ha='center', fontsize=11, fontweight='bold', color='#1e8449')
-for i, t in enumerate(['TCP:   192.168.1.5 / 443          \u2192 ALLOW   (from r1)', 'TCP:   192.168.0.0/16 (rest)      \u2192 DENY    (from r2)', 'UDP:   192.168.0.0/16              \u2192 DENY    (from r2)', 'ICMP:  192.168.0.0/16              \u2192 DENY    (from r2; type [0, 255])']):
+for i, t in enumerate(['TCP:   192.168.1.5 / 443       \u2192 ALLOW  (from r1)', 'TCP:   192.168.0.0/16 (rest)   \u2192 DENY   (from r2)', 'UDP:   192.168.0.0/16          \u2192 DENY   (from r2)', 'ICMP:  192.168.0.0/16          \u2192 DENY   (from r2; type [0, 255])']):
     ax.text(0.85, H-3.85-0.33*i, t, fontsize=9, family=MONO, color='#222')
 ax.text(W/2, H-5.55, '\u03a0(IP) = {TCP, UDP, ICMP}    (super-set: r2 yields three sub-rules)', ha='center', fontsize=9.5, color='#1f3a5f')
 ax.text(W/2, H-5.9, '\u03a0(TCP) = {TCP}    (already atomic: r1 yields one sub-rule)', ha='center', fontsize=9.5, color='#1f3a5f')
@@ -41,7 +41,7 @@ ax.text(0.85, H-1.9, 'r2:  IP   ANY                 \u2192 ALLOW   (r2 generaliz
 ax.annotate('', xy=(W/2, H-2.55), xytext=(W/2, H-2.15), arrowprops=dict(arrowstyle='-|>', color='#333', lw=1.4)); ax.text(W/2+0.12, H-2.35, 'sweep-line 3D', fontsize=8.5, style='italic', color='#333', va='center')
 box(ax, 0.5, H-4.75, W-1, 2.15, '#dff2e4', '#1e8449')
 ax.text(W/2, H-2.85, 'After 4D Decomposition (disjoint cells)', ha='center', fontsize=11, fontweight='bold', color='#1e8449')
-ax.text(W/2, H-3.3, '(UDP and ICMP: one ALLOW cell each, inherited from r2)', ha='center', fontsize=8, style='italic', color='#555')
+ax.text(W/2, H-3.22, '(UDP and ICMP: one ALLOW cell each, inherited from r2)', ha='center', fontsize=8, style='italic', color='#555')
 cells = [('TCP \u00b7 src \u2260 10.0.0.x', 'port 0\u201365535', '\u2192 ALLOW', '#1e8449'), ('TCP \u00b7 10.0.0.x', 'port 0\u201379', '\u2192 ALLOW', '#1e8449'), ('TCP \u00b7 10.0.0.x', 'port 80\u20131023', '\u2192 DENY', '#b03a2e'), ('TCP \u00b7 10.0.0.x', 'port 1024\u201365535', '\u2192 ALLOW', '#1e8449')]
 pos = [(0.75, H-3.95), (3.55, H-3.95), (0.75, H-4.65), (3.55, H-4.65)]
 for (a, b, c, col), (px, py) in zip(cells, pos):

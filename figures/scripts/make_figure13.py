@@ -24,17 +24,19 @@ for i, (t, s, fc, ec) in enumerate(boxes):
     ax.text(W/2, y-bh*0.73, s, ha='center', va='center', fontsize=7.3, color='#333')
     if i < len(boxes)-1: ax.annotate('', xy=(W/2, y-bh-gap+0.02), xytext=(W/2, y-bh-0.02), arrowprops=dict(arrowstyle='-|>', color='#333', lw=1.2))
     y -= bh+gap
-rh = y-0.25
-ax.add_patch(FancyBboxPatch((x0, 0.2), bw, rh, boxstyle='round,pad=0.02,rounding_size=0.08', fc='#f4f6f7', ec='#5d6d7e', lw=1.6))
-ax.text(W/2, 0.2+rh-0.2, 'Verified Results', ha='center', va='center', fontsize=10.5, fontweight='bold', color='#1f3a5f')
+rh = 0.45 + 5*0.3 + 0.12; yb = y-0.05-rh   # v14.3: results box fitted to its five items
+ax.add_patch(FancyBboxPatch((x0, yb), bw, rh, boxstyle='round,pad=0.02,rounding_size=0.08', fc='#f4f6f7', ec='#5d6d7e', lw=1.6))
+ax.text(W/2, yb+rh-0.2, 'Verified Results', ha='center', va='center', fontsize=10.5, fontweight='bold', color='#1f3a5f')
 items = [('Fidelity = 100%', '73,120,887 evaluations, FN = 0  (95% UCI \u2264 4.10\u00d710\u207b\u2078)'),
          ('Recall = Precision = 100%', '20,868 TP, 0 FP, 0 FN (pairwise anomalies, Definition 5)'),
          ('d = 4 constant', 'all n = 5\u2192400 and all 32 ClassBench-ng cases (by construction; no early collapse)'),
-         ('Cython 40\u00d7\u201341\u00d7 speedup', '97\u2013177 ns/packet  (39\u00d7 at n = 25); runtime, not algorithmic, comparison'),
+         ('Cython 39\u00d7\u201341\u00d7 speedup', '67\u2013177 ns/packet  (n = 25\u2013400); runtime, not algorithmic, comparison'),
          ('Theorems 1\u20133, Propositions 1\u20134', 'consistent with every measurement (proofs are deductive; experiments are checks)')]
-yy = 0.2+rh-0.45
+yy = yb+rh-0.45
 for h, s in items:
     ax.text(x0+0.25, yy, '\u2713 '+h, ha='left', va='center', fontsize=8.2, fontweight='bold', color='#1e8449')
     ax.text(x0+0.42, yy-0.14, s, ha='left', va='center', fontsize=6.9, color='#333'); yy -= 0.3
-fig.savefig(os.path.join(OUT, 'Figure13.png'), dpi=600); fig.savefig(os.path.join(OUT, 'Figure13.pdf'))
+from matplotlib.transforms import Bbox
+crop = Bbox([[0, yb-0.2], [W, H]])
+fig.savefig(os.path.join(OUT, 'Figure13.png'), dpi=600, bbox_inches=crop); fig.savefig(os.path.join(OUT, 'Figure13.pdf'), bbox_inches=crop)
 print('Figure13 written')
