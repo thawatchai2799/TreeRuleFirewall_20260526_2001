@@ -1,5 +1,14 @@
 # Changelog
 
+## v14.5 (2026-09)
+
+- Figure 7: the two verdict lines now read "Ambiguous: sibling ranges overlap - disjointness
+  invariant not met" and "Unambiguous: sibling ranges disjoint - invariant holds (Corollary 1.B,
+  Theorem 2)", so the pre-normalization tree is described as not yet meeting the sibling-disjointness
+  invariant rather than as an object to which Theorem 2 applies (image file edited; no generating
+  script).
+- No code, data, or result file changed.
+
 ## v14.4 (2026-09)
 
 - Figure 13: the results box is now titled "Results Summary" and its last item reads "Theorems 1-3,
