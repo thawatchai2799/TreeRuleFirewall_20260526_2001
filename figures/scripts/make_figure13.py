@@ -26,12 +26,12 @@ for i, (t, s, fc, ec) in enumerate(boxes):
     y -= bh+gap
 rh = 0.45 + 5*0.3 + 0.12; yb = y-0.05-rh   # v14.3: results box fitted to its five items
 ax.add_patch(FancyBboxPatch((x0, yb), bw, rh, boxstyle='round,pad=0.02,rounding_size=0.08', fc='#f4f6f7', ec='#5d6d7e', lw=1.6))
-ax.text(W/2, yb+rh-0.2, 'Verified Results', ha='center', va='center', fontsize=10.5, fontweight='bold', color='#1f3a5f')
+ax.text(W/2, yb+rh-0.2, 'Results Summary', ha='center', va='center', fontsize=10.5, fontweight='bold', color='#1f3a5f')
 items = [('Fidelity = 100%', '73,120,887 evaluations, FN = 0  (95% UCI \u2264 4.10\u00d710\u207b\u2078)'),
          ('Recall = Precision = 100%', '20,868 TP, 0 FP, 0 FN (pairwise anomalies, Definition 5)'),
          ('d = 4 constant', 'all n = 5\u2192400 and all 32 ClassBench-ng cases (by construction; no early collapse)'),
          ('Cython 39\u00d7\u201341\u00d7 speedup', '67\u2013177 ns/packet  (n = 25\u2013400); runtime, not algorithmic, comparison'),
-         ('Theorems 1\u20133, Propositions 1\u20134', 'consistent with every measurement (proofs are deductive; experiments are checks)')]
+         ('Theorems 1\u20133, Propositions 1\u20134 \u2014 established by proof', 'every measurement is consistent with them (experiments are checks, not evidence)')]
 yy = yb+rh-0.45
 for h, s in items:
     ax.text(x0+0.25, yy, '\u2713 '+h, ha='left', va='center', fontsize=8.2, fontweight='bold', color='#1e8449')

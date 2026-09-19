@@ -1,5 +1,14 @@
 # Changelog
 
+## v14.4 (2026-09)
+
+- Figure 13: the results box is now titled "Results Summary" and its last item reads "Theorems 1-3,
+  Propositions 1-4 - established by proof / every measurement is consistent with them", so the
+  figure no longer suggests that experiments verify the theorems (`make_figure13.py` updated).
+- Figure 7: the two verdict lines now read "Ambiguous: sibling ranges overlap (Theorem 2)" and
+  "Unambiguous: sibling ranges disjoint (Theorem 2)" (image file edited; no generating script).
+- No code, data, or result file changed.
+
 ## v14.3 (2026-09)
 
 Figure files revised for legibility at the second revision of the manuscript; no code, data,
