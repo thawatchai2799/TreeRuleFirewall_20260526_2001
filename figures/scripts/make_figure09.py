@@ -29,7 +29,7 @@ for x in (0.75+S, 1.66+S): ax.plot([x, x], [L[3]-0.18, L[3]-0.55], color='#777',
 px, py, pw, ph = 4.55, H-4.95, 2.1, 3.35
 ax.add_patch(FancyBboxPatch((px, py), pw, ph, boxstyle='round,pad=0.02,rounding_size=0.08', fc='#f4f6f7', ec='#5d6d7e', lw=1.3))
 ax.text(px+pw/2, py+ph-0.28, 'Per-level role (Ordering 4)', ha='center', fontsize=8.8, fontweight='bold', color='#1f3a5f')
-rows = [('L1', '#2c6fad', 'Root: split on protocol\n(3 atomic classes)'), ('L2', '#1e8449', 'Disjoint dst_ip ranges\n(Corollary 1.B, Theorem 2)'), ('L3', '#b9770e', 'dst_port refinement in the\nprotocol domain (Def. 1.bis)'), ('L4', '#b03a2e', 'src_ip filter; leaf = action.\nEvery packet: one leaf')]
+rows = [('L1', '#2c6fad', 'Root: split on protocol\n(3 atomic classes)'), ('L2', '#1e8449', 'Disjoint dst_ip ranges\n(Corollary 1, Theorem 2)'), ('L3', '#b9770e', 'dst_port refinement in the\nprotocol domain (Definition 2)'), ('L4', '#b03a2e', 'src_ip filter; leaf = action.\nEvery packet: one leaf')]
 yy = py+ph-0.75
 for l, c, txt in rows:
     ax.text(px+0.14, yy, l, fontsize=8.6, fontweight='bold', color=c, va='top'); ax.text(px+0.5, yy, txt, fontsize=7.0, color='#333', va='top', linespacing=1.35); yy -= 0.72

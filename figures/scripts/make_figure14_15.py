@@ -16,7 +16,7 @@ a.axvspan(25, 150, color='#ead9f0', alpha=0.5); a.axvspan(150, 450, color='#d9ef
 a.plot(sizes, mean('trf_match_us'), '-o', color='#2c4a6b', lw=2.4, ms=8, label='TRF (proposed; d = 4 in all cases)')
 a.plot(sizes, mean('lrf_match_us'), '-s', color='#c0392b', lw=2.4, ms=8, label='LRF (linear scan baseline)')
 a.plot(sizes, mean('fdd_match_us'), '-D', color='#5cb85c', lw=2.4, ms=8, label='FDD-style fixed-order ablation (Ordering 1)')
-a.plot(sizes, mean('hicuts_match_us'), '-^', color='#e67e22', lw=2.4, ms=8, label='HiCuts [16]')
+a.plot(sizes, mean('hicuts_match_us'), '-^', color='#e67e22', lw=2.4, ms=8, label='HiCuts')
 a.set_xscale('log'); a.set_xticks(sizes); a.set_xticklabels(sizes); a.set_xlim(40, 470)
 a.text(60, 12, 'Medium', color='#7b4f9d', fontweight='bold'); a.text(260, 5, 'Large', color='#2e8b6e', fontweight='bold')   # v14.3: labels in the empty part of each band
 a.set_xlabel('sampled rules per ruleset', fontsize=11); a.set_ylabel('mean match latency (\u03bcs)', fontsize=11); a.set_ylim(0, 22)

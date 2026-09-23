@@ -42,7 +42,7 @@ ax.annotate('', xy=(W/2, H-2.55), xytext=(W/2, H-2.15), arrowprops=dict(arrowsty
 box(ax, 0.5, H-4.75, W-1, 2.15, '#dff2e4', '#1e8449')
 ax.text(W/2, H-2.85, 'After 4D Decomposition (disjoint cells)', ha='center', fontsize=11, fontweight='bold', color='#1e8449')
 ax.text(W/2, H-3.22, '(UDP and ICMP: one ALLOW cell each, inherited from r2)', ha='center', fontsize=8, style='italic', color='#555')
-cells = [('TCP \u00b7 src \u2260 10.0.0.x', 'port 0\u201365535', '\u2192 ALLOW', '#1e8449'), ('TCP \u00b7 10.0.0.x', 'port 0\u201379', '\u2192 ALLOW', '#1e8449'), ('TCP \u00b7 10.0.0.x', 'port 80\u20131023', '\u2192 DENY', '#b03a2e'), ('TCP \u00b7 10.0.0.x', 'port 1024\u201365535', '\u2192 ALLOW', '#1e8449')]
+cells = [('TCP \u00b7 src \u2260 10.0.0.x', 'port 0\u201365,535', '\u2192 ALLOW', '#1e8449'), ('TCP \u00b7 10.0.0.x', 'port 0\u201379', '\u2192 ALLOW', '#1e8449'), ('TCP \u00b7 10.0.0.x', 'port 80\u20131023', '\u2192 DENY', '#b03a2e'), ('TCP \u00b7 10.0.0.x', 'port 1024\u201365,535', '\u2192 ALLOW', '#1e8449')]
 pos = [(0.75, H-3.95), (3.55, H-3.95), (0.75, H-4.65), (3.55, H-4.65)]
 for (a, b, c, col), (px, py) in zip(cells, pos):
     box(ax, px, py, 2.45, 0.62, 'white', '#7f8c8d', 1.0); ax.text(px+1.225, py+0.45, a, ha='center', fontsize=8.3, fontweight='bold', color='#222'); ax.text(px+1.225, py+0.27, b, ha='center', fontsize=7.6, color='#444'); ax.text(px+1.225, py+0.09, c, ha='center', fontsize=8.3, fontweight='bold', color=col)
@@ -50,7 +50,7 @@ ax.annotate('', xy=(W/2, H-5.2), xytext=(W/2, H-4.8), arrowprops=dict(arrowstyle
 box(ax, 0.5, H-7.15, W-1, 1.9, '#dbe9f6', '#2c6fad')
 ax.text(W/2, H-5.5, 'TRF Output (TCP subtree, Ordering 4)', ha='center', fontsize=11, fontweight='bold', color='#2c6fad')
 ax.text(W/2, H-5.88, '[protocol]=TCP \u2192 [dst_ip]=ANY \u2192 [dst_port] \u2192 [src_ip]', ha='center', fontsize=9, family=MONO, color='#222')
-ax.text(W/2, H-6.25, 'port 0\u201379 \u2192 ALLOW          port 1024\u201365535 \u2192 ALLOW', ha='center', fontsize=8.3, color='#222')
+ax.text(W/2, H-6.25, 'port 0\u201379 \u2192 ALLOW          port 1024\u201365,535 \u2192 ALLOW', ha='center', fontsize=8.3, color='#222')
 ax.text(W/2, H-6.52, 'port 80\u20131023 \u2192 [src_ip]: 10.0.0.x \u2192 DENY,  other \u2192 ALLOW', ha='center', fontsize=8.3, color='#222')
 ax.text(W/2, H-6.9, 'Every packet reaches exactly one leaf; the DENY region equals M(r1), as first match requires.', ha='center', fontsize=7.9, style='italic', color='#555')
 ax.text(W/2, 0.35, 'Conversion phases: \u2460 protocol expansion  \u2461 sweep-line 3D  \u2462 action assignment  \u2463 adjacent-cell merge', ha='center', fontsize=8.5, color='#1f3a5f')

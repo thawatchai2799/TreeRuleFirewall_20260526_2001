@@ -12,7 +12,7 @@ ax.text(W/2, H-0.54, 'Synthetic dataset, ordering benchmark, ClassBench-ng, and 
 boxes = [('Generate', '10,000 LRF policies \u00b7 Small / Medium / Large \u00b7 seed 2025', '#dbe9f6', '#2c6fad'),
          ('Convert', 'LRF \u2192 TRF \u00b7 Algorithm 1 \u00b7 Ordering 4 (default)', '#e8dff5', '#6a4c9c'),
          ('Verify Step 1 \u2014 Semantic Fidelity', '10,000 policies \u00b7 73.12 M evaluations \u00b7 0 discrepancies', '#fbe0e0', '#b03a2e'),
-         ('Verify Step 2 \u2014 Anomaly Detection', '7,000 trials \u00b7 14 configurations \u00b7 Z3 oracle on 10% sample', '#fdebd0', '#b9770e'),
+         ('Verify Step 2 \u2014 Anomaly Detection', '7000 trials \u00b7 14 configurations \u00b7 Z3 oracle on 10% sample', '#fdebd0', '#b9770e'),
          ('Verify Step 3 \u2014 Scalability & Depth', 'n = 5 \u2192 400 \u00b7 depth d = 4 \u00b7 two platforms', '#dff2e4', '#1e8449'),
          ('Verify Step 4 \u2014 Ordering Comparison', '12 orderings \u00b7 10 independently generated policies per size \u00b7 n \u2208 {50, 100, 200, 400}', '#d6eaf8', '#1f618d'),
          ('Verify Step 5 \u2014 ClassBench-ng', '8 rulesets \u00b7 32 cases \u00b7 vs FDD-style fixed-order ablation / HiCuts', '#e8dff5', '#7d3c98'),
@@ -28,7 +28,7 @@ rh = 0.45 + 5*0.3 + 0.12; yb = y-0.05-rh   # v14.3: results box fitted to its fi
 ax.add_patch(FancyBboxPatch((x0, yb), bw, rh, boxstyle='round,pad=0.02,rounding_size=0.08', fc='#f4f6f7', ec='#5d6d7e', lw=1.6))
 ax.text(W/2, yb+rh-0.2, 'Results Summary', ha='center', va='center', fontsize=10.5, fontweight='bold', color='#1f3a5f')
 items = [('Fidelity = 100%', '73,120,887 evaluations, FN = 0  (95% UCI \u2264 4.10\u00d710\u207b\u2078)'),
-         ('Recall = Precision = 100%', '20,868 TP, 0 FP, 0 FN (pairwise anomalies, Definition 5)'),
+         ('Recall = Precision = 100%', '20,868 TP, 0 FP, 0 FN (pairwise anomalies, Definition 6)'),
          ('d = 4 constant', 'all n = 5\u2192400 and all 32 ClassBench-ng cases (by construction; no early collapse)'),
          ('Cython 39\u00d7\u201341\u00d7 speedup', '67\u2013177 ns/packet  (n = 25\u2013400); runtime, not algorithmic, comparison'),
          ('Theorems 1\u20133, Propositions 1\u20134 \u2014 established by proof', 'every measurement is consistent with them (experiments are checks, not evidence)')]
